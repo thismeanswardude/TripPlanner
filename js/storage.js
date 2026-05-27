@@ -21,7 +21,7 @@ export function loadTrip() {
         };
 }
 
-//theme handler
+// Theme handler
 export function saveTheme(theme) {
     localStorage.setItem(
         THEME_KEY,

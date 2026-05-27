@@ -34,10 +34,10 @@ const sortSelect =
 const themeBtn =
     document.getElementById("themeToggle");
 
-//apply theme
+// Apply theme
 document.body.className = theme;
 
-//fetch data from json
+// Fetch data from json
 fetch("./possibleActivities.json")
     .then(res => res.json())
     .then(data => {
@@ -45,11 +45,11 @@ fetch("./possibleActivities.json")
         render();
     });
 
-//main render
+// Main render
 function render() {
     let filtered = [...activities];
 
-    //search activity
+    // Search activity
     const search = searchInput.value.toLowerCase();
 
     if (search) {
@@ -58,14 +58,14 @@ function render() {
         );
     }
 
-    //price filtering
+    // Price filtering
     if (maxPriceInput.value) {
         filtered = filtered.filter(a =>
             a.price <= Number(maxPriceInput.value)
         );
     }
 
-    //sorting activities
+    // Sorting activities
     if (sortSelect.value === "title") {
         filtered.sort((a, b) =>
             a.title.localeCompare(b.title)
@@ -99,7 +99,7 @@ function render() {
     renderTrip();
 }
 
-//add handle
+// Add handle
 function handleAddActivity(
     activity,
     day,
@@ -137,7 +137,7 @@ function handleAddActivity(
     return result;
 }
 
-//render trip side
+// Render trip side
 function renderTrip() {
     ["day1", "day2", "day3"].forEach(day => {
         const container =
@@ -180,12 +180,12 @@ function renderTrip() {
     });
 }
 
-//listeners
+// Listeners
 searchInput.addEventListener("input", render);
 maxPriceInput.addEventListener("input", render);
 sortSelect.addEventListener("change", render);
 
-//theme toggle
+// Theme toggle
 
     themeBtn.addEventListener("click", () => {
 

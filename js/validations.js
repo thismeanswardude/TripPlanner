@@ -12,6 +12,7 @@ export function validateActivity(
     const endDate =
         new Date(end);
 
+    // Duration calculation
     const diffHours =
         (endDate - startDate)
         / (1000 * 60 * 60);
