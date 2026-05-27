@@ -25,7 +25,7 @@ export function renderActivities(
             </div>
 
             <div class="activity-price">
-                €${activity.price}
+                \u20AC ${activity.price}
             </div>
 
             <div class="activity-actions">
